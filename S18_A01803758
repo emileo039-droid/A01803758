@@ -1,0 +1,53 @@
+# 1. Monitor de Temperatura
+temps = [22, 24, 19, 21, 10, 20, 11]
+media = sum(temps) / len(temps)
+print("Promedio:", media)
+for i, t in enumerate(temps):
+    if t > media:
+        print("Día", i+1, "arriba de la media")
+    else:
+        print("Día", i+1, "debajo o igual a la media")
+
+# 2. Calificaciones
+alumnos = ["cono", "Luis", "leonel", "miguelin", "Sofía"]
+califs = [85, 70, 55, 90, 45]
+prom = sum(califs) / len(califs)
+print("Promedio general:", prom)
+aprobados = [c for c in califs if c >= 60]
+print("Porcentaje aprobados:", len(aprobados)*100/len(califs), "%")
+reprobados = [alumnos[i] for i in range(len(califs)) if califs[i] < 60]
+print("Reprobados:", reprobados)
+
+# 3. Lista de compras
+art = ["eggs", "milki", "pan integral pro"]
+comprado = [False, True, False]
+for i in range(len(art)):
+    if not comprado[i]:
+        r = input(f"¿Ya compraste {art[i]}? (s/n): ")
+        if r == "s":
+            comprado[i] = True
+print("Estado:", comprado)
+
+# 4. Números en una lista
+nums = [5, 8, 3, 12, 1]
+print("Máximo:", max(nums))
+print("Mínimo:", min(nums))
+print("Ordenada:", sorted(nums))
+
+# 5. Pares e impares
+nums = [1, 2, 3, 4, 5, 6]
+pares = [n for n in nums if n % 2 == 0]
+impares = [n for n in nums if n % 2 != 0]
+print("Pares:", pares)
+print("Impares:", impares)
+
+# 6. Nombres de usuario
+usuarios = ["leito", "lolo", "pedro"]
+while True:
+    nuevo = input("Nuevo usuario: ")
+    if nuevo in usuarios:
+        print("Ya existe, intenta otro.")
+    else:
+        usuarios.append(nuevo)
+        break
+print("Usuarios:", usuarios)
